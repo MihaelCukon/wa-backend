@@ -3,6 +3,18 @@ import express from 'express';
 const app = express() // instanciranje aplikacije
 const port = 3000 // port na kojem će web server slušati
 
-app.get('/', (req, res) => res.send('Hello World, ovaj puta preko browsera!'))
+app.get("/", (req, res) => {});
 
-app.listen(port, () => console.log(`Slušam na portu ${port}!`))
+app.get("/ponudaPoslova", (req, res) => {
+  res.json(data.ponudaPoslova);
+});
+
+app.get("/posao", (req, res) => {
+    res.json(data.posao);
+  });
+
+  app.get("/izradaProfila", (req, res) => {
+    res.json(data.izradaProfila);
+  });
+  
+app.listen(port, () => console.log(`Port ${port}`));
